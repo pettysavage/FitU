@@ -1,3 +1,10 @@
+<!-- 
+    This is the hompage of the webiste after a user has logged in. 
+        All of the posts are shown here and there is a button to create
+        a new review. 
+-->
+
+
 <?php
     include_once 'includes/dbh.inc.php';
 ?>

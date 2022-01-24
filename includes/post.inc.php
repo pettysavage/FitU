@@ -1,3 +1,8 @@
+<!-- 
+    This is the background work to insert the post that was created
+        into the database.
+ -->
+
 <?php
     include_once 'dbh.inc.php';
 

@@ -1,3 +1,7 @@
+<!-- 
+    This is the background work too add the new user to the database.
+ -->
+
 <?php
     include_once 'dbh.inc.php';
 

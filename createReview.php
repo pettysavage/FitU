@@ -1,3 +1,6 @@
+<!-- This page is where the user is able to type in text boxes the name of the brand
+    and the review that they would like to add with that brand. -->
+
 <!DOCTYPE html>
 <html>
     <form action="includes/post.inc.php" method="POST">

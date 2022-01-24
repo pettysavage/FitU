@@ -1,3 +1,10 @@
+<!-- 
+    This is the log in page, the user is able to type in their username and
+        password. There is an option to sign up if the user does not have an
+        account.
+ -->
+
+
 <!DOCTYPE html>
 <html>
     <head>

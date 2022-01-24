@@ -1,3 +1,8 @@
+<!-- 
+    This is the background work to check that the user who entered the 
+        information is in the database and that the password is correct.
+ -->
+
 <?php
     include_once 'dbh.inc.php';
 
@@ -26,7 +31,7 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
 if(!empty($userName_err)&& !empty($pwd_err)){
     $sql = "SELECT userID, userName, password FROM user WHERE userName = ? ;";
     
-    if($stmt = mysqli_prepare($link, $sql)){
+    if($stmt = mysqli_prepare($conn, $sql)){
         mysqli_stmt_bind_param($stmt, "s", $param_userName);
 
         $param_userName = $userName;

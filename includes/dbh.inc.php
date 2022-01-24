@@ -1,6 +1,10 @@
-<?php
+<!-- 
+    This is the database configuration file. Can change the 
+        information when needed.
+ -->
 
-//this one is in the review file
+
+<?php
 
 $dbServername = "localhost";
 $dbUsername = "root";
