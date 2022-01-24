@@ -9,21 +9,41 @@
             table, th
             {
                 border: 2px solid #000000;
+                text-align: center;
             }
             td
             {
                 border-bottom: 1px solid #000000;
             }
+            form, h2
+            {
+                text-align: center;
+            }
+            #logout
+            {
+                /* color: #45B0FD; */
+                text-align: right;
+            }
         </style>
     </head>
     <body>
+        <form id="logout">
+            <a href="index.php"><button type="button">Log Out</button></a>
+        </form>
+        
+
+        <h2>Reviews</h2>
+
+
         <form>
-        <input type="text" name="contains" placeholder="Search...">
-        <a href="homepage.inc.php"><button name="search">Search</button></a>
+        <!-- <input type="text" name="contains" placeholder="Search...">
+        <a href="homepage.inc.php"><button name="search">Search</button></a> -->
+            <a href="createReview.php"><button type="button" name="review">Create Review</button></a>
+            
         </form>
 
         <br>
-        <a href="createReview.php"><button type="button" name="review">Create Review</button></a>
+        
 
         <!-- <table id="allPosts" align="center">
             <tbody>
