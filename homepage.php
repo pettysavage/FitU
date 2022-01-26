@@ -80,6 +80,9 @@
 
         ?>
 
+        <!-- <?php
+            $sql = "SELECT brand, review FROM"
+        ?> -->
 
         <!-- Uncomment when you have the correct databases in place (Start)-->
         <!-- <?php

@@ -16,8 +16,13 @@
         $dateClicked = date('Y-m-d H:i:s');
     }
 
-    $sql = "INSERT INTO posts (brand, review, date) VALUES ('$brand','$review', '$dateClicked');";
-    mysqli_query($conn, $sql);
+    if (((ctype_space($brand)) || (ctype_space($review))) ||(($brand == "") && ($review == ""))) {
+        header("Location: ../homepage.php");
+    } else {
+        $sql = "INSERT INTO posts (brand, review, date) VALUES ('$brand','$review', '$dateClicked');";
+        mysqli_query($conn, $sql);
+    }
+    
     // $resultCheck = mysqli_num_rows($result);
             
     // if ($resultCheck > 0) {
