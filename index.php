@@ -1,8 +1,3 @@
-<!-- 
-    This is the front page of the website. The user will need to either
-        log in or register to access the rest of the website.
- -->
-
 <!DOCTYPE html>
 <html>
     <head>

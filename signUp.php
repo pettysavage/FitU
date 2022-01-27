@@ -1,10 +1,3 @@
-<!-- 
-    This is the sign up page. The user is asked to enter their information to 
-        create an account and then they will be sent to the front page to then
-        log in to the website.
- -->
-
-
 <!DOCTYPE html>
 <html>
     <head>
