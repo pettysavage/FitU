@@ -1,4 +1,13 @@
-<?php
+<!-- 
+    The background work needed to populate the reviews if a users is 
+        looking for certain brands.
+
+    Not too sure if this file is needed. Keeping just in case it is - jan 26
+ -->
+
+
+ <?php
+    //including the database config file
     include_once 'dbh.inc.php';
 
     $lookFor = mysqli_real_escape_string($conn, $_POST['contains']);

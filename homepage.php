@@ -1,10 +1,19 @@
+<!-- 
+    This is the hompage of the webiste after a user has logged in. 
+        All of the posts are shown here and there is a button to create
+        a new review. 
+-->
+
+
 <?php
+    // including the database files
     include_once 'includes/dbh.inc.php';
 ?>
 
 <!DOCTYPE html>
 <html>
     <head>
+        <title>FitU Homepage</title>
         <style>
             table, th
             {
@@ -21,60 +30,48 @@
             }
             #logout
             {
-                /* color: #45B0FD; */
                 text-align: right;
             }
         </style>
     </head>
     <body>
+        <!-- log out button -->
         <form id="logout">
             <a href="index.php"><button type="button">Log Out</button></a>
         </form>
-        
 
         <h2>Reviews</h2>
 
-
+        <!-- create review button -->
         <form>
-        <!-- <input type="text" name="contains" placeholder="Search...">
-        <a href="homepage.inc.php"><button name="search">Search</button></a> -->
             <a href="createReview.php"><button type="button" name="review">Create Review</button></a>
-            
         </form>
-
         <br>
         
-
-        <!-- <table id="allPosts" align="center">
-            <tbody>
-                <tr id="row1">
-                    <th width="150px">
-                        Brand
-                    </th>
-                    <th width="350px">
-                        Review
-                    </th>
-                </tr>
-            </tbody>
-        </table> -->
+        <!-- The Reviews table 
+                it updates each time there is a new review added/created-->
 
         <?php
+            // getting all the review posts
             $sql = "SELECT brand, review FROM posts;";
             $result = mysqli_query($conn, $sql);
             $resultCheck = mysqli_num_rows($result);
-                
+            
+            // checking if there are any reviews in the table
             if ($resultCheck > 0) {
+                // table header
                 echo "<table align='center'><tr><th width='150px'>Brand</th><th width='350px'>Review</th></tr>";
                 while ($row = mysqli_fetch_assoc($result)) {
+                    // showing the posts in table form
                     echo "<tr><td>" . $row["brand"] . "</td><td>" . $row["review"] . "</td></td>";
                 }
+                // end table
                 echo "</table>";
             }
 
         ?>
 
-
-        <!-- Uncomment when you have the correct databases in place (Start)-->
+        <!-- Uncomment when you have the correct databases in place v2(?) with photos added (Start)-->
         <!-- <?php
             $sql = "SELECT brand, review, photo FROM posts;";
             $result = mysqli_query($conn, $sql);
@@ -83,13 +80,13 @@
             if ($resultCheck > 0) {
                 echo "<table align='center'><tr><th width='150px'>Brand</th><th width='350px'>Review</th><th>Photo</th></tr>";
                 while ($row = mysqli_fetch_assoc($result)) {
-                    echo "<tr><td>" . $row["brand"] . "</td><td>" . $row["review"] . "</td></td>";
+                    echo "<tr><td>" . $row["brand"] . "</td><td>" . $row["review"] . "</td><td>" . $row["photo"] . "</td></td>";
                 }
                 echo "</table>";
             }
 
         ?> -->
-        <!-- Uncomment when you have the correct databases in place (End)-->
+        <!-- Uncomment when you have the correct databases in place v2(?) with photos added (End)-->
 
         <!-- Uncomment when you have the correct databases in place v3(?) with user who posted the review at front/end (Start)-->
         <!-- <?php

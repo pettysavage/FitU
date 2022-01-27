@@ -1,24 +1,30 @@
-<?php
+<!-- 
+    This is the background work to insert the post that was created
+        into the database.
+ -->
+
+ <?php
+    // including the database config file
     include_once 'dbh.inc.php';
 
+    // getting the review and brand input
     $brand = mysqli_real_escape_string($conn, $_POST['brand']);
     $review = mysqli_real_escape_string($conn, $_POST['review']);
-    // $email = $_POST['email'];
-    // $uid = $_POST['uid'];
-    // $pwd = $_POST['pwd'];
 
+    // getting the time stamp that the post was made
     if(isset($_POST['submit'])) {
         $dateClicked = date('Y-m-d H:i:s');
     }
 
-    $sql = "INSERT INTO posts (brand, review, date) VALUES ('$brand','$review', '$dateClicked');";
-    mysqli_query($conn, $sql);
-    // $resultCheck = mysqli_num_rows($result);
-            
-    // if ($resultCheck > 0) {
-    //     while ($row = mysqli_fetch_assoc($result)) {
-    //         echo $row['user_uid'] . "<br>";
-    //     }
-    // }
+    // checking if the review boxes are empty or filled with space character/blank space
+    if (((ctype_space($brand)) || (ctype_space($review))) ||(($brand == "") && ($review == ""))) {
+        // returning to homepage without adding blank review to database
+        header("Location: ../homepage.php");
+    } else {
+        // adding review to the database
+        $sql = "INSERT INTO posts (brand, review, date) VALUES ('$brand','$review', '$dateClicked');";
+        mysqli_query($conn, $sql);
+    }
+    // returning to the hompage with the new post added
     header("Location: ../homepage.php?post=success");
 ?>
