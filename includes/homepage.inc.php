@@ -1,9 +1,3 @@
-<!-- 
-    The background work needed to populate the reviews if a users is 
-        looking for certain brands.
- -->
-
-
 <?php
     include_once 'dbh.inc.php';
 
